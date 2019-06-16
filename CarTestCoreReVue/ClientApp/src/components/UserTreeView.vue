@@ -211,7 +211,7 @@
         console.log('in onGetAll')
         this.isUpdate = true
         console.log('in onGetAll ==> axios')
-        await axios.get('https://localhost:44331/api/SampleData/GetCountriesAsync')
+        await axios.get('/api/SampleData/GetCountriesAsync')
           .then(response => {
             console.log('response==>' + response + '==' + JSON.stringify(response.data))
             // this.countries.push(response.data)
@@ -231,7 +231,7 @@
             if (!(this.isSelected.plate === this.isSelected.modelName +"-000")) {
 
 
-                await axios.post('https://localhost:44331/api/SampleData/UpdateCarAsync', this.isSelected).then(response => {
+                await axios.post('/api/SampleData/UpdateCarAsync', this.isSelected).then(response => {
                     if (this.isSelected === response.data) {
                         console.log('good update')
                     } else {
